@@ -1,0 +1,29 @@
+<h4>{{title}}</h4>
+
+<input type="text" #box (keyup.enter)="addHero(box.value); box.value=''" placeholder="hero name">
+<button (click)="reset()">Reset</button>
+<p>
+    <input id="can-fly" type="checkbox" [(ngModel)]="canFly"> can fly
+    <input id="mutate" type="checkbox" [(ngModel)]="mutate">Mutate array
+    <button (click)="reset()">Reset</button>
+</p>
+
+<div *ngFor="let hero of heroes">
+    {{ hero.name }}
+</div>
+
+<p>flying heroes</p>
+<div *ngFor="let hero of (heroes | flyingHeroes)">
+    {{ hero.name }}
+</div>
+<!-- <p>
+New hero:
+  <input type="text" #box
+          (keyup.enter)="addHero(box.value); box.value=''"
+          placeholder="hero name">
+</p>
+<p>
+    <input id="can-fly" type="checkbox" [(ngModel)]="canFly"> can fly
+    <input id="mutate" type="checkbox" [(ngModel)]="mutate">Mutate array
+    <button (click)="reset()">Reset</button>
+</p> -->

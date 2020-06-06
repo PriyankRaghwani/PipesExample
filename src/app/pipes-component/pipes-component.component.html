@@ -1,0 +1,26 @@
+<h3>Date Pipes</h3>
+
+<p>Using Pipes :- {{ birthday | date}}</p>
+
+<p>Using Parameterized Pipes :- {{ birthday | date:"MM/dd/yy"}}</p>
+
+<p>Using Parameterized Pipes with toggle option :- {{ birthday | date:format}}</p>
+<button (click) = "toggleFormat()">Toggle format</button>
+
+<p>Chaining Pipes with uppercase :- {{ birthday | date | uppercase}}</p>
+
+<p>Chaining Pipes with fullDate uppercase :- {{ birthday | date:'fullDate' | uppercase}}</p>
+
+<h3>Custom Pipes</h3>
+
+<p>Power booster :- {{ 2 | exponentialStrength: 10}}</p>
+
+<h3>Power Boost Calculator</h3>
+
+<div>Normal power :- <input [(ngModel)]="power" ></div>
+<div>Normal power :- <input [(ngModel)]="factor" ></div>
+<p> super hero power :- {{power | exponentialStrength: factor}}</p>
+
+<h3>Pipes and Change Detection</h3>
+
+<app-flying-heroes></app-flying-heroes>
