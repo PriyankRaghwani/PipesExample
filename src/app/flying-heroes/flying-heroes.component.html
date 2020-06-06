@@ -7,11 +7,11 @@
     <input id="mutate" type="checkbox" [(ngModel)]="mutate">Mutate array
     <button (click)="reset()">Reset</button>
 </p>
-<!-- this is angular for loop -->
+
 <div *ngFor="let hero of heroes">
     {{ hero.name }}
 </div>
-
+<!-- This is flying heroes -->
 <p>flying heroes</p>
 <div *ngFor="let hero of (heroes | flyingHeroes)">
     {{ hero.name }}
